@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Myzyk & ZYK Unit — Investor Profile</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pink: #E8008D;
+  --ink: #1A0010;
+  --white: #FFFFFF;
+  --cream: #FAF0F6;
+  --slate: #4A2040;
+  --pale: #FCE4F3;
+  --green: #1A6B3C;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  color: var(--white);
+  min-height: 100vh;
+}
+
+.page { max-width: 1100px; margin: 0 auto; padding: 0 40px 80px; }
+
+/* ── HERO ── */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  align-items: center;
+  gap: 60px;
+  padding: 80px 0;
+  border-bottom: 1px solid rgba(232,0,141,0.2);
+}
+
+.hero-left {}
+
+.logo-wrap {
+  width: 200px;
+  height: 120px;
+  margin-bottom: 40px;
+}
+
+.logo-wrap img { width: 100%; height: 100%; object-fit: contain; }
+
+.hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 88px;
+  line-height: 0.9;
+  letter-spacing: 4px;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.hero h1 span { color: var(--pink); }
+
+.hero-slogan {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-style: italic;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 3px;
+  margin-bottom: 40px;
+}
+
+.hero-mission {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.85);
+  border-left: 3px solid var(--pink);
+  padding-left: 24px;
+  max-width: 480px;
+}
+
+.hero-right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+
+.stat-box {
+  background: rgba(232,0,141,0.06);
+  border: 1px solid rgba(232,0,141,0.15);
+  padding: 32px 24px;
+  transition: background 0.3s;
+}
+
+.stat-box:hover { background: rgba(232,0,141,0.12); }
+.stat-box:first-child { grid-column: 1 / -1; background: var(--pink); border-color: var(--pink); }
+.stat-box:first-child .stat-num { color: var(--ink); }
+.stat-box:first-child .stat-label { color: rgba(26,0,16,0.7); }
+
+.stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 52px;
+  color: var(--pink);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.stat-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+}
+
+/* ── SECTION LABEL ── */
+.section-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin-bottom: 12px;
+  margin-top: 80px;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 40px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 40px;
+  line-height: 1.2;
+}
+
+.divider {
+  width: 48px;
+  height: 2px;
+  background: var(--pink);
+  margin-bottom: 40px;
+}
+
+/* ── TWO PROFILES GRID ── */
+.profiles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+  margin-top: 80px;
+}
+
+.profile-card {
+  padding: 56px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-myzyk {
+  background: var(--pink);
+}
+
+.profile-zyk {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(232,0,141,0.2);
+}
+
+.profile-tag {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.profile-myzyk .profile-tag { color: rgba(26,0,16,0.6); }
+.profile-zyk .profile-tag { color: var(--pink); }
+
+.profile-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 64px;
+  letter-spacing: 3px;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.profile-myzyk .profile-name { color: var(--ink); }
+.profile-zyk .profile-name { color: var(--white); }
+
+.profile-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  font-style: italic;
+  margin-bottom: 32px;
+}
+
+.profile-myzyk .profile-sub { color: rgba(26,0,16,0.65); }
+.profile-zyk .profile-sub { color: rgba(255,255,255,0.45); }
+
+.profile-desc {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 36px;
+}
+
+.profile-myzyk .profile-desc { color: rgba(26,0,16,0.8); }
+.profile-zyk .profile-desc { color: rgba(255,255,255,0.65); }
+
+.feature-list { list-style: none; }
+
+.feature-list li {
+  font-size: 13px;
+  padding: 10px 0;
+  border-top: 1px solid;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  line-height: 1.5;
+}
+
+.profile-myzyk .feature-list li { border-color: rgba(26,0,16,0.15); color: rgba(26,0,16,0.8); }
+.profile-zyk .feature-list li { border-color: rgba(232,0,141,0.15); color: rgba(255,255,255,0.65); }
+
+.feature-list li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+.profile-myzyk .feature-list li::before { background: var(--ink); }
+.profile-zyk .feature-list li::before { background: var(--pink); }
+
+/* ── AUDIENCE ── */
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  margin-top: 40px;
+}
+
+.audience-box {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(232,0,141,0.12);
+  padding: 28px 20px;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.audience-box:hover { background: rgba(232,0,141,0.08); }
+
+.audience-icon {
+  font-size: 28px;
+  margin-bottom: 12px;
+  display: block;
+  line-height: 1;
+}
+
+.audience-title {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.audience-desc {
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.5;
+}
+
+/* ── APPS ── */
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2px;
+  margin-top: 40px;
+}
+
+.app-box {
+  padding: 24px 16px;
+  text-align: center;
+  border: 1px solid rgba(232,0,141,0.12);
+}
+
+.app-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: var(--pink);
+  margin-bottom: 6px;
+}
+
+.app-desc {
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.5;
+}
+
+/* ── ZYK TIERS ── */
+.tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 40px;
+}
+
+.tier-box {
+  padding: 40px 28px;
+  position: relative;
+}
+
+.tier-corner { background: rgba(232,0,141,0.06); border: 1px solid rgba(232,0,141,0.15); }
+.tier-lounge { background: var(--ink); border: 1px solid rgba(232,0,141,0.3); }
+.tier-arena { background: var(--pink); }
+
+.tier-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px;
+  letter-spacing: 3px;
+  margin-bottom: 4px;
+}
+
+.tier-corner .tier-name { color: var(--pink); }
+.tier-lounge .tier-name { color: var(--pink); }
+.tier-arena .tier-name { color: var(--ink); }
+
+.tier-room {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-style: italic;
+  margin-bottom: 24px;
+}
+
+.tier-corner .tier-room { color: rgba(255,255,255,0.4); }
+.tier-lounge .tier-room { color: rgba(255,255,255,0.4); }
+.tier-arena .tier-room { color: rgba(26,0,16,0.6); }
+
+.tier-spec {
+  font-size: 12px;
+  padding: 6px 0;
+  border-top: 1px solid;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tier-corner .tier-spec { border-color: rgba(232,0,141,0.1); color: rgba(255,255,255,0.5); }
+.tier-lounge .tier-spec { border-color: rgba(232,0,141,0.15); color: rgba(255,255,255,0.5); }
+.tier-arena .tier-spec { border-color: rgba(26,0,16,0.15); color: rgba(26,0,16,0.7); }
+
+.tier-spec-val { color: var(--white); font-weight: 500; }
+.tier-arena .tier-spec-val { color: var(--ink); font-weight: 600; }
+
+/* ── PILLARS ── */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2px;
+  margin-top: 40px;
+}
+
+.pillar-box {
+  padding: 28px 20px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(232,0,141,0.12);
+  text-align: center;
+}
+
+.pillar-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 40px;
+  color: rgba(232,0,141,0.3);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.pillar-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--pink);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pillar-desc {
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.6;
+}
+
+/* ── CLOSING ── */
+.closing {
+  margin-top: 80px;
+  padding: 60px;
+  background: var(--pink);
+  text-align: center;
+}
+
+.closing-q {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+
+.closing-sub {
+  font-size: 13px;
+  color: rgba(26,0,16,0.65);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.closing-by {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 4px;
+  color: var(--ink);
+  margin-top: 32px;
+  opacity: 0.5;
+}
+
+@media(max-width:768px){
+  .hero { grid-template-columns:1fr; min-height:auto; }
+  .hero h1 { font-size:56px; }
+  .profiles { grid-template-columns:1fr; }
+  .audience-grid { grid-template-columns:1fr 1fr; }
+  .apps-grid { grid-template-columns:1fr 1fr; }
+  .tiers-grid { grid-template-columns:1fr; }
+  .pillars-grid { grid-template-columns:1fr 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="logo-wrap">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMTIwIj48Y2lyY2xlIGN4PSIxMDAiIGN5PSI2MCIgcj0iNTUiIGZpbGw9IiNFODAwOEQiLz48Y2lyY2xlIGN4PSIxMDAiIGN5PSI2MCIgcj0iNDIiIGZpbGw9IndoaXRlIi8+PGNpcmNsZSBjeD0iMTAwIiBjeT0iNjAiIHI9IjMwIiBmaWxsPSIjRTgwMDhEIi8+PHRleHQgeD0iMTAwIiB5PSI0OCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0id2hpdGUiIGxldHRlci1zcGFjaW5nPSIzIj5NWVpZSzwvdGV4dD48dGV4dCB4PSIxMDAiIHk9Ijc2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iNyIgZmlsbD0id2hpdGUiIGxldHRlci1zcGFjaW5nPSIyIj5NWSBTUEFDRTwvdGV4dD48L3N2Zz4=" alt="Myzyk logo">
+      </div>
+      <h1><span>MY</span>ZYK</h1>
+      <div class="hero-slogan">My Space</div>
+      <div class="hero-mission">We are building the first transparent royalty infrastructure for Africa's creative economy — owned and operated in partnership with the creators and venues who power it.</div>
+    </div>
+    <div class="hero-right">
+      <div class="stat-box">
+        <div class="stat-num">5.84B</div>
+        <div class="stat-label">Projected annual gross revenue at 1M units</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">1M</div>
+        <div class="stat-label">ZYK Unit 3-year deployment target</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">3M</div>
+        <div class="stat-label">Full continental location vision</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">22.7mo</div>
+        <div class="stat-label">Hardware payback period</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">100yr</div>
+        <div class="stat-label">Of uncaptured creative value. Ended now.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TWO PROFILES -->
+  <div class="section-label">Digital Profiles</div>
+  <div class="section-title">Two products. One ecosystem.</div>
+
+  <div class="profiles">
+
+    <!-- MYZYK PROFILE -->
+    <div class="profile-card profile-myzyk">
+      <div class="profile-tag">Platform · Five Applications</div>
+      <div class="profile-name">MYZYK</div>
+      <div class="profile-sub">Africa's creative rights and royalty platform</div>
+      <div class="profile-desc">Myzyk is the operating system of African music rights. It registers every creative contributor, tracks every play across every venue on the network, calculates royalties in real time and distributes direct payments to every rights holder on the last banking day of every month. No minimum threshold. No opacity. No exclusions.</div>
+      <ul class="feature-list">
+        <li>AI-powered rights registry — audio and video assets, 10+ contributor categories including session musicians, choreographers and dancers</li>
+        <li>Real-time play logging — every patron request, DJ/VJ session and playlist play attributed and calculated instantly</li>
+        <li>Direct mobile money distribution — M-Pesa, MTN MoMo — last banking day of every month</li>
+        <li>Watch &amp; Listen Party — live network-wide music debut events for premium artists</li>
+        <li>Joint Party — multi-city live DJ/VJ broadcast with voice-activated city switching</li>
+        <li>African Cinema Network — 250,000 screens activated for African film by Year 3</li>
+      </ul>
+    </div>
+
+    <!-- ZYK UNIT PROFILE -->
+    <div class="profile-card profile-zyk">
+      <div class="profile-tag">Hardware · Three Tiers</div>
+      <div class="profile-name">ZYK UNIT</div>
+      <div class="profile-sub">The physical portal in every room on the network</div>
+      <div class="profile-desc">The ZYK Unit is a self-reliant networked audio and video performance terminal. It arrives at a venue pre-configured, pre-paired and pre-connected. The venue owner provides a wall socket. The unit does the rest — playing music, logging every play, attributing every royalty and keeping the Joint Party alive regardless of what the grid, the generator or the satellite decide to do.</div>
+      <ul class="feature-list">
+        <li>Solar panel + LiFePO4 power wall — 8–10 hours full operation independent of the grid</li>
+        <li>Starlink primary connectivity via Zoshani enterprise agreement — pan-African satellite broadband</li>
+        <li>Dual SIM 4G Zoshani-managed failover — automatic switching, zero venue owner involvement</li>
+        <li>Concert-quality audio, cinema-quality video — calibrated per room, per tier</li>
+        <li>Voice command city switching — DJMYZYK Joint Party in under 1 second</li>
+        <li>Three tiers: ZYK Corner · ZYK Lounge · ZYK Arena — 100m² to 300m²+</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- FIVE APPS -->
+  <div class="section-label" style="margin-top:80px">The Ecosystem</div>
+  <div class="section-title">Five applications. One platform.</div>
+  <div class="apps-grid">
+    <div class="app-box">
+      <div class="app-name">MYZYK</div>
+      <div class="app-desc">Patrons · song requests, session access, discover</div>
+    </div>
+    <div class="app-box">
+      <div class="app-name">MYZYK Art.</div>
+      <div class="app-desc">Artists · register rights, watch earnings, get paid</div>
+    </div>
+    <div class="app-box">
+      <div class="app-name">DJMYZYK</div>
+      <div class="app-desc">DJs · VJs · live A/V mix, Joint Party, broadcast</div>
+    </div>
+    <div class="app-box">
+      <div class="app-name">MYZYK-V</div>
+      <div class="app-desc">Venue owners · monitor unit, manage subscription, track earnings</div>
+    </div>
+    <div class="app-box" style="border-color:rgba(232,0,141,0.3);">
+      <div class="app-name" style="color:rgba(232,0,141,0.5);">MYZYK Admin</div>
+      <div class="app-desc">Platform operations · reconciliation, distribution, PRO reports</div>
+    </div>
+  </div>
+
+  <!-- ZYK TIERS -->
+  <div class="section-label" style="margin-top:80px">Hardware</div>
+  <div class="section-title">ZYK Corner · ZYK Lounge · ZYK Arena</div>
+  <div class="tiers-grid">
+    <div class="tier-box tier-corner">
+      <div class="tier-name">ZYK Corner</div>
+      <div class="tier-room">Coffee house · tea room · restaurant · local bar</div>
+      <div class="tier-spec"><span>Floor area</span><span class="tier-spec-val">Up to 100m²</span></div>
+      <div class="tier-spec"><span>Solar</span><span class="tier-spec-val">150–200W</span></div>
+      <div class="tier-spec"><span>Power wall</span><span class="tier-spec-val">1kWh LiFePO4</span></div>
+      <div class="tier-spec"><span>Display</span><span class="tier-spec-val">32″ 1080p</span></div>
+      <div class="tier-spec"><span>Audio</span><span class="tier-spec-val">80W RMS</span></div>
+      <div class="tier-spec"><span>Runtime</span><span class="tier-spec-val">8–10 hours</span></div>
+    </div>
+    <div class="tier-box tier-lounge">
+      <div class="tier-name">ZYK Lounge</div>
+      <div class="tier-room">Established bar · restaurant · DJ venue</div>
+      <div class="tier-spec"><span>Floor area</span><span class="tier-spec-val">100–300m²</span></div>
+      <div class="tier-spec"><span>Solar</span><span class="tier-spec-val">300–400W</span></div>
+      <div class="tier-spec"><span>Power wall</span><span class="tier-spec-val">2.5kWh LiFePO4</span></div>
+      <div class="tier-spec"><span>Display</span><span class="tier-spec-val">55″ 4K + secondary</span></div>
+      <div class="tier-spec"><span>Audio</span><span class="tier-spec-val">300W RMS + 12″ sub</span></div>
+      <div class="tier-spec"><span>Runtime</span><span class="tier-spec-val">8–10 hours</span></div>
+    </div>
+    <div class="tier-box tier-arena">
+      <div class="tier-name">ZYK Arena</div>
+      <div class="tier-room">Nightclub · hotel · airport · five-star</div>
+      <div class="tier-spec"><span>Floor area</span><span class="tier-spec-val">300m²+</span></div>
+      <div class="tier-spec"><span>Solar</span><span class="tier-spec-val">600W+ custom</span></div>
+      <div class="tier-spec"><span>Power wall</span><span class="tier-spec-val">5kWh+ scalable</span></div>
+      <div class="tier-spec"><span>Display</span><span class="tier-spec-val">75″+ or LED wall</span></div>
+      <div class="tier-spec"><span>Audio</span><span class="tier-spec-val">1kW+ line array</span></div>
+      <div class="tier-spec"><span>Runtime</span><span class="tier-spec-val">8–10 hours</span></div>
+    </div>
+  </div>
+
+  <!-- SELF-RELIANCE PILLARS -->
+  <div class="section-label" style="margin-top:80px">Engineering</div>
+  <div class="section-title">Five pillars of self-reliance</div>
+  <div class="pillars-grid">
+    <div class="pillar-box">
+      <div class="pillar-num">01</div>
+      <div class="pillar-title">Solar</div>
+      <div class="pillar-desc">Integrated panel charges the power wall during daylight. Africa's most reliable utility.</div>
+    </div>
+    <div class="pillar-box">
+      <div class="pillar-num">02</div>
+      <div class="pillar-title">Power Wall</div>
+      <div class="pillar-desc">LiFePO4. 8–10 hours full operation. No grid required. No vibe broken.</div>
+    </div>
+    <div class="pillar-box">
+      <div class="pillar-num">03</div>
+      <div class="pillar-title">Starlink</div>
+      <div class="pillar-desc">Zoshani enterprise agreement. Every unit on satellite broadband from day one.</div>
+    </div>
+    <div class="pillar-box">
+      <div class="pillar-num">04</div>
+      <div class="pillar-title">4G Failover</div>
+      <div class="pillar-desc">Dual SIM. Zoshani-managed. Auto-switches if Starlink drops. Invisible.</div>
+    </div>
+    <div class="pillar-box">
+      <div class="pillar-num">05</div>
+      <div class="pillar-title">AVR</div>
+      <div class="pillar-desc">Automatic voltage regulation. Clean power in. No spikes. No damage.</div>
+    </div>
+  </div>
+
+  <!-- TARGET AUDIENCE -->
+  <div class="section-label" style="margin-top:80px">Stakeholders</div>
+  <div class="section-title">Every participant earns. Every participant protects.</div>
+  <div class="audience-grid">
+    <div class="audience-box">
+      <span class="audience-icon">🎵</span>
+      <div class="audience-title">Artists &amp; Creatives</div>
+      <div class="audience-desc">First direct, transparent royalty payments from venue plays. Every contributor — including session musicians, choreographers and dancers.</div>
+    </div>
+    <div class="audience-box">
+      <span class="audience-icon">🎧</span>
+      <div class="audience-title">DJs &amp; VJs</div>
+      <div class="audience-desc">Session earnings, multi-city broadcast, Joint Party. Career transformation from local performer to network talent.</div>
+    </div>
+    <div class="audience-box">
+      <span class="audience-icon">🏛️</span>
+      <div class="audience-title">Venue Owners</div>
+      <div class="audience-desc">10% of every play through their ZYK Unit. The unit is a revenue asset, not a cost. Plug in. That is all.</div>
+    </div>
+    <div class="audience-box">
+      <span class="audience-icon">🤝</span>
+      <div class="audience-title">Investors &amp; Partners</div>
+      <div class="audience-desc">.33B projected Zoshani annual revenue at full deployment. 22.7-month hardware payback. Hardware partner opportunity at continental scale.</div>
+    </div>
+  </div>
+
+  <!-- CLOSING -->
+  <div class="closing">
+    <div class="closing-q">Is this what you would like to be part of?</div>
+    <div class="closing-sub">Zoshani · Minneapolis, Minnesota · United States of America</div>
+    <div class="closing-by">MYZYK · MY SPACE</div>
+  </div>
+
+</div>
+</body>
+</html>
